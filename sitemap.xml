@@ -90,13 +90,6 @@
   </url>
   
   <url>
-    <loc>https://will-c137.github.io/tags/%E5%88%B7%E6%9C%BA/</loc>
-    <lastmod>2023-01-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://will-c137.github.io/tags/%E6%9D%82%E6%84%9F/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -112,6 +105,13 @@
   
   <url>
     <loc>https://will-c137.github.io/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2023-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://will-c137.github.io/tags/%E5%88%B7%E6%9C%BA/</loc>
     <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
