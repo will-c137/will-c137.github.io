@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Will-c137&#39;s Blog</title>
+  <title>will-c137&#39;s Blog</title>
   
   <subtitle>some ideas, some solutions, some nonsense</subtitle>
   <link href="https://will-c137.github.io/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://will-c137.github.io/</id>
   
   <author>
-    <name>Will</name>
+    <name>will-c137</name>
     
   </author>
   
