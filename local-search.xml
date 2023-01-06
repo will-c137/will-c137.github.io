@@ -13,14 +13,20 @@
     
     <categories>
       
-      <category>生存指南</category>
+      <category>技术经验</category>
+      
+      <category>刷机教程</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>刷机</tag>
+      <tag>刷机命令</tag>
+      
+      <tag>adb</tag>
+      
+      <tag>fastboot</tag>
       
     </tags>
     
@@ -40,6 +46,8 @@
       
       <category>个人</category>
       
+      <category>年终总结</category>
+      
     </categories>
     
     
@@ -49,7 +57,7 @@
       
       <tag>废话</tag>
       
-      <tag>年终总结</tag>
+      <tag>总结</tag>
       
     </tags>
     
@@ -67,7 +75,9 @@
     
     <categories>
       
-      <category>生存指南</category>
+      <category>技术经验</category>
+      
+      <category>LaTeX</category>
       
     </categories>
     
@@ -75,6 +85,8 @@
     <tags>
       
       <tag>LaTeX</tag>
+      
+      <tag>BibTeX</tag>
       
     </tags>
     
@@ -92,7 +104,9 @@
     
     <categories>
       
-      <category>生存指南</category>
+      <category>技术经验</category>
+      
+      <category>LaTeX</category>
       
     </categories>
     
@@ -100,6 +114,8 @@
     <tags>
       
       <tag>LaTeX</tag>
+      
+      <tag>VSCode</tag>
       
     </tags>
     
@@ -117,7 +133,9 @@
     
     <categories>
       
-      <category>生存指南</category>
+      <category>技术经验</category>
+      
+      <category>LaTeX</category>
       
     </categories>
     
@@ -125,6 +143,8 @@
     <tags>
       
       <tag>LaTeX</tag>
+      
+      <tag>VSCode</tag>
       
     </tags>
     
@@ -142,7 +162,9 @@
     
     <categories>
       
-      <category>生存指南</category>
+      <category>技术经验</category>
+      
+      <category>LaTeX</category>
       
     </categories>
     
@@ -150,6 +172,8 @@
     <tags>
       
       <tag>LaTeX</tag>
+      
+      <tag>VSoCde</tag>
       
     </tags>
     
