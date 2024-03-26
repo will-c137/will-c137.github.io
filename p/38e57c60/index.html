@@ -1,0 +1,862 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/zima.png">
+  <link rel="icon" href="/img/zima.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Will">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一个养老人的备忘录罢了......">
+<meta property="og:type" content="article">
+<meta property="og:title" content="备忘：刷机教程">
+<meta property="og:url" content="https://will-c137.github.io/p/38e57c60/index.html">
+<meta property="og:site_name" content="Will&#39;s Blog">
+<meta property="og:description" content="一个养老人的备忘录罢了......">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221223142737.png">
+<meta property="article:published_time" content="2022-12-22T19:16:12.000Z">
+<meta property="article:modified_time" content="2024-03-26T09:41:40.617Z">
+<meta property="article:author" content="Will">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="刷机">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221223142737.png">
+  
+  
+  
+    <meta name="google-site-verification" content="1ft1JC8JzprTmwMEl4OtX_Aycupu8HLnIwT-k_ruwqA" />
+  
+  <title>备忘：刷机教程 - Will&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"will-c137.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Will&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>文章</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-bookmark-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/caprice/" target="_self">
+                <i class="iconfont icon-speakernotes"></i>
+                <span>随想</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="备忘：刷机教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Will
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-22 19:16" pubdate>
+          2022年12月22日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="技术经验"
+        id="heading-8ee11c06b6f625f35ca6ebfa64545bc3" role="tab" data-toggle="collapse" href="#collapse-8ee11c06b6f625f35ca6ebfa64545bc3"
+        aria-expanded="true"
+      >
+        技术经验
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-8ee11c06b6f625f35ca6ebfa64545bc3"
+           role="tabpanel" aria-labelledby="heading-8ee11c06b6f625f35ca6ebfa64545bc3">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/p/c68cc46/" title="从 APK 说起：Android 安装包格式发展"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">从 APK 说起：Android 安装包格式发展</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/38e57c60/" title="备忘：刷机教程"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">备忘：刷机教程</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">备忘：刷机教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Google-platform-tools-下载">Google platform-tools 下载</h2>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platform-tools">下载地址</a></p>
+<p>此处省略了驱动安装的过程…以及打开 usb 调试和文件传输 (我想这个我应该不会忘).</p>
+<h2 id="Android-分区架构">Android 分区架构</h2>
+<h3 id="安卓架构发展">安卓架构发展</h3>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221223141920.png" srcset="/img/loading.gif" lazyload alt="从 onlyA 到 VAB 动态分区"><br>
+要点：</p>
+<ul>
+<li>只有 onlyA 架构和 onlyA 动态分区架构有单独的<code>recovery</code>分区</li>
+<li>AB 分区开始后<code>recovery</code>合并在<code>boot</code>分区 (国内厂商大多没有遵守)</li>
+<li>VAB 之后 (出厂 Android11 机型，有厂商没有遵守), <code>boot</code>变成了 3 个分区：
+<ol>
+<li><code>boot</code> :linux 内核存放分区</li>
+<li><code>dtbo</code> :屏幕刷新率存放分区</li>
+<li><code>vandor_boot</code>: linux 内核中部分配置文件</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>三者需要配套，即同时刷入才算替换了 rec</p>
+</blockquote>
+<ul>
+<li>出厂 Android13 开始不在将将 Ramdisk 放在<code>boot</code>分区，单划了<code>init_boot</code>分区</li>
+<li>所有的动态分区都将<code>system</code>, <code>vendor</code>, <code>odm</code>等合并为<code>super</code>分区，并区分了<code>fastboot</code>和<code>fastbootd</code>(单独的以上分区需要后者才能刷入，前者只能刷入<code>super</code>)</li>
+</ul>
+<h3 id="VAB-和-AB-动态分区的区别">VAB 和 AB 动态分区的区别</h3>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221223142637.png" srcset="/img/loading.gif" lazyload alt="AB 动态分区架构"><br>
+<img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221223142737.png" srcset="/img/loading.gif" lazyload alt="VAB 架构"><br>
+不难看出：</p>
+<ul>
+<li>AB 动态分区架构中的<code>system_a</code>,<code>system_b</code>, <code>boot_a</code>, <code>boot_b</code>等均存在，而 VAB 架构中只有<code>*_a</code>是真实存在的，切换分区不过是重命名的过程</li>
+<li>VAB 架构中多了<code>system_ext_a</code>和<code>system_ext_b</code>两个分区</li>
+</ul>
+<h2 id="常用指令">常用指令</h2>
+<h3 id="常用-adb-命令">常用 adb 命令</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">adb devices ##查看连接设备<br>adb reboot  ##重启到系统<br>adb reboot recovery ##重启到recovery模式<br>adb reboot bootloader ##重启到bootloader(fastboot模式)<br>adb reboot fastboot ##重启到fastbootd<br>adb reboot edl ##重启到EDL<br>adb sideload &lt;path-to-update.zip&gt; ##通过adb更新系统, 刷第三方rom(注意需要和rec配套, 在recovery模式下进行)<br></code></pre></td></tr></table></figure>
+<h3 id="常用-fastboot-命令">常用 fastboot 命令</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">fastboot devices ##查看连接设备<br>fastboot oem unlock ##bl解锁(解锁前往往要在开发者选项中打开oem解锁)<br>fastboot oem lock ##bl上锁(非必要不上锁)<br>fastboot oem device-info  ##查询bootloader分区解锁状况<br>fastboot reboot  ##重启到系统<br>fastboot reboot bootloader ##重启到bootloader(fastboot模式)<br>fastboot reboot fastboot ##重启到fastbootd<br>fastboot reboot edl ##重启到EDL<br>fastboot erase [分区名称] ##擦除命令<br>fastboot format [分区名称] ##格式化命令<br>fastboot flash [分区名称] &lt;分区路径&gt; ##刷写分区命令<br>fastboot flash -w update &lt;path-to-update.zip&gt; ##刷写rom命令<br></code></pre></td></tr></table></figure>
+<h2 id="常用模式">常用模式</h2>
+<h3 id="恢复模式-Recovery">恢复模式 (Recovery)</h3>
+<h4 id="简介">简介</h4>
+<p>Recovery 模式类似于 Windows 下的 PE，是 Android 用于安装系统更新的一种模式．它由一个带有 RAM disk 的 Linux 内核组成，该内核位于与主 Android 系统不同的分区上．<br>
+作用如下：</p>
+<ul>
+<li>使用 Android 调试桥 (adb) 更新系统</li>
+<li>通过 SD 卡更新系统 (显然对没有 SD 卡的设备无效)</li>
+<li>恢复出厂设置</li>
+<li>安装分区</li>
+<li>运行系统测试<br>
+Recovery 需要和使用的系统配套，第三方系统需要刷入第三方 Rec.</li>
+</ul>
+<h4 id="Vab-以后机型刷入-Recovery">Vab 以后机型刷入 Recovery</h4>
+<p>Vab 机型并没有传统意义上的单独 Recovery 分区，因此，刷入第三方 Rec 时，应该分别刷入 boot, vendor_boot, dtbo 这三个镜像 (三者配套存在，需要同时刷入),<br>
+即：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">fastboot flash boot &lt;path-to-boot.zip&gt;<br>fastboot flash vendor_boot &lt;path-to-vendor_boot.zip&gt;<br>fastboot flash dtbo &lt;path-to-dtbo.zip&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>Vab 以后机型刷入 twrp 十分麻烦，<br>
+不再建议使用，<br>
+而且闭源 Rec 这种东西懂的都懂🤣.</p>
+</blockquote>
+<h3 id="引导模式-Fastboot">引导模式 (Fastboot)</h3>
+<p>Fastboot 是一个协议和一个同名的工具．它包含在 Android SDK 包中，主要用于通过来自主机的 USB 连接修改闪存文件系统．它要求设备以 Fastboot 模式启动．如果启用该模式，它将接受一组使用命令行通过 USB 发送给它的特定命令．<br>
+Fastboot 允许从自定义恢复映像启动.Fastboot 不需要在设备上启用 USB 调试．并非所有 Android 设备都启用了快速启动．要使用快速启动，必须​​在启动期间按住特定的组合键．</p>
+<p>Android 设备制造商可以选择是否要实施 Fastboot 或其他协议．</p>
+<p>Fastboot 比 Recovery 更为底层，需要连接电脑并通过<code>fastboot</code>命令进行操作，见<a href="##%E5%B8%B8%E7%94%A8fastboot%E5%91%BD%E4%BB%A4">常用 fastboot 命令</a>.常常用来线刷 Rom 或者救砖．</p>
+<h3 id="用户空间模式-Fastbootd">用户空间模式 (Fastbootd)</h3>
+<p>Fastbootd 是动态分区机型特有的一个模式，属于 Recovery 分区的功能.(容易发现界面的相似)  动态分区机型以一个<code>super</code>分区囊括了<code>system</code>, <code>vendor</code>, <code>odm</code>等分区，Fastboot 模式只能刷入完整的<code>super</code>, 不能单独刷入<code>system</code>, <code>vendor</code>, <code>odm</code>.  进入 Fastbootd 即可单独刷入他们 (也是 fastboot 命令).<br>
+从 Fastboot 重启到 Fastbootd 的指令是<code>fastboot reboot fastboot</code>.</p>
+<h3 id="深度刷机模式-EDL">深度刷机模式 (EDL)</h3>
+<p>最底层的刷机模式，理论上只要硬件未损坏都可以救回来．<br>
+例：<code>Qualcomm HS-USB QDLoader 9008</code>(俗称 9008 模式)，<br>
+联发科的<code>MediaTek USB Port</code>.<br>
+如今大量厂商缩紧了 EDL，导致几乎无法自行使用救砖．</p>
+<h2 id="获取-Root">获取 Root</h2>
+<ol start="0">
+<li>解压系统包 (卡刷包，fastboot 线刷包可以直接解压提取)</li>
+</ol>
+<ul>
+<li>
+<p>下载<code>payload-dump-go</code>(网址：<a target="_blank" rel="noopener" href="https://github.com/ssut/payload-dumper-go/">解包工具</a>)</p>
+</li>
+<li>
+<p>将卡刷包中的<code>payload.bin</code>文件放在 payload-dump-go 文件夹内</p>
+</li>
+<li>
+<p>目录下 cmd 执行<code>payload-dumper-go.exe &lt;path-to-payload.bin&gt;</code></p>
+</li>
+<li>
+<p>随后则会提取整个卡刷包，选择所需 (<code>boot.ing</code>或者<code>init_boot.img</code>) 即可</p>
+<blockquote>
+<p>注意出厂安卓 13 的机型不再将 Ramdisk 放在 Boot 分区，<br>
+需要提取的是<code>init_boot.img</code>文件而不是<code>boot.img</code>文件</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>将对应 Rom 包中的<code>.img</code>提取出来放到手机中</li>
+<li>在 Magisk 软件中选择<code>选择并修补一个文件</code></li>
+<li>将修补好的<code>.img</code>文件通过<code>fastboot flash boot &lt;path-to-boot.img&gt;</code> 命令刷入 boot.(一般不需要<code>boot_a</code> 或者 <code>boot_b</code>,官方工具会自动识别分区)<br>
+(出厂安卓 13 则为<code>fastboot flash init_boot &lt;path-to-init_boot.img&gt;</code>)</li>
+<li><code>fastboot reboot</code>重启到系统</li>
+</ol>
+<h2 id="刷入第三方-Rom">刷入第三方 Rom</h2>
+<p>一般第三方 Rom 都有详细教程，<br>
+大致分为两类：</p>
+<ul>
+<li>线刷包直接<code>fastboot flash -w update &lt;path-to-update.zip&gt;</code>就行</li>
+<li>卡刷包则需要
+<ul>
+<li>刷入<strong>对应的</strong><code>Recovery</code>;<br>
+(Vab 以后的机型就是刷入<code>boot</code> ,<code>vendor_boot</code>, <code>dtbo</code>这三个镜像)</li>
+</ul>
+<blockquote>
+<p>某些 ROM 此处提供的<code>boot</code>未必是完整<code>boot</code>,修补时不建议选用，有变砖风险</p>
+</blockquote>
+<ul>
+<li>通过 adb 更新来刷入 (<code>adb sideload</code>命令);</li>
+<li>然后<code>recovery</code>中清除数据;</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>清除数据这点很重要，<br>
+限于篇幅文中没能介绍「X 清」</p>
+</blockquote>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.coolapk1s.com/feed/27525474">VAB 架构</a></li>
+<li><a target="_blank" rel="noopener" href="https://source.android.google.cn/devices/tech/ota/virtual_ab">Google 关于 VAB 的介绍</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/Android%E6%81%A2%E5%A4%8D%E6%A8%A1%E5%BC%8F">维基百科 - 恢复模式</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Fastboot">wikipedia-Fastboot</a></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%BB%8F%E9%AA%8C/" class="category-chain-item">技术经验</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Android/" class="print-no-link">#Android</a>
+      
+        <a href="/tags/%E5%88%B7%E6%9C%BA/" class="print-no-link">#刷机</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>备忘：刷机教程</div>
+      <div>https://will-c137.github.io/p/38e57c60/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Will</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年12月22日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/p/622a5765/" title="2022 年度总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022 年度总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/p/5723de38/" title="BibTeX 教程">
+                        <span class="hidden-mobile">BibTeX 教程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

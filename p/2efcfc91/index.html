@@ -1,0 +1,847 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/zima.png">
+  <link rel="icon" href="/img/zima.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Will">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="使用用户代码片段进一步提高 LaTeX 效率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX 进阶 - 用户代码片段">
+<meta property="og:url" content="https://will-c137.github.io/p/2efcfc91/index.html">
+<meta property="og:site_name" content="Will&#39;s Blog">
+<meta property="og:description" content="使用用户代码片段进一步提高 LaTeX 效率">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20230227152635.png">
+<meta property="article:published_time" content="2022-12-02T00:18:34.000Z">
+<meta property="article:modified_time" content="2024-03-26T09:41:40.617Z">
+<meta property="article:author" content="Will">
+<meta property="article:tag" content="LaTeX">
+<meta property="article:tag" content="VSCode">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20230227152635.png">
+  
+  
+  
+    <meta name="google-site-verification" content="1ft1JC8JzprTmwMEl4OtX_Aycupu8HLnIwT-k_ruwqA" />
+  
+  <title>LaTeX 进阶 - 用户代码片段 - Will&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"will-c137.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Will&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>文章</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-bookmark-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/caprice/" target="_self">
+                <i class="iconfont icon-speakernotes"></i>
+                <span>随想</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="LaTeX 进阶 - 用户代码片段"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Will
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-02 00:18" pubdate>
+          2022年12月2日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="LaTeX"
+        id="heading-5766dea037e9097ac6869424b65fe7b6" role="tab" data-toggle="collapse" href="#collapse-5766dea037e9097ac6869424b65fe7b6"
+        aria-expanded="true"
+      >
+        LaTeX
+        <span class="list-group-count">(9)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-5766dea037e9097ac6869424b65fe7b6"
+           role="tabpanel" aria-labelledby="heading-5766dea037e9097ac6869424b65fe7b6">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/p/5723de38/" title="BibTeX 教程"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">BibTeX 教程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/607d85b8/" title="LaTeX 中的命令行操作"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">LaTeX 中的命令行操作</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/2efcfc91/" title="LaTeX 进阶 - 用户代码片段"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">LaTeX 进阶 - 用户代码片段</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/41b55798/" title="LaTeX 进阶 - 自定义快捷键"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">LaTeX 进阶 - 自定义快捷键</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/97035fce/" title="Linux 上的 texlive 安装与配置"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Linux 上的 texlive 安装与配置</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/c3b4499/" title="Minted 宏包教程"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Minted 宏包教程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/e3598bbe/" title="使用 VSCode 作为 LaTeX 前端"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">使用 VSCode 作为 LaTeX 前端</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/7b66ea8d/" title="在 LaTeX 中使用算法伪代码"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">在 LaTeX 中使用算法伪代码</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/d2b0e588/" title="如何找到所有的 LaTeX 符号"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">如何找到所有的 LaTeX 符号</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">LaTeX 进阶 - 用户代码片段</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="何为用户代码片段">何为用户代码片段</h2>
+<p>代码片段就是一个可被插入文档的模板，通过命令或一些触发文本插入代码片段．</p>
+<p>借助代码片段，你可以创建一个样板文件，并插入常用的文本块．这样做的好处就是，你能够免于一次次重复的输入相同的内容．当然坏处是会造成对编辑器的依赖语法会生疏．</p>
+<p>所以建议在了解语言后再使用，学习初期使用是不明智的．</p>
+<blockquote>
+<p>过早的优化（代码）是万恶之源<br>
+----Donald Knuth</p>
+</blockquote>
+<h2 id="他-们-在哪里">他 (们) 在哪里</h2>
+<p>我们以 VSCode 为例，从小齿轮中打开配置用户代码片段</p>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221201232926.png" srcset="/img/loading.gif" lazyload alt="配置用户代码片段"></p>
+<p>接下来会让你选择语言类型，本文当然选择 latex</p>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221201233026.png" srcset="/img/loading.gif" lazyload alt="选择 latex.json"></p>
+<p>打开后可以发现有个提示，下面以此为例子解释各个参数的意义</p>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20221201233157.png" srcset="/img/loading.gif" lazyload alt="一个提示"></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;Print to console&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br> <span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;log&quot;</span><span class="hljs-punctuation">,</span><br> <span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>     <span class="hljs-string">&quot;console.log(&#x27;$1&#x27;);&quot;</span><span class="hljs-punctuation">,</span><br>     <span class="hljs-string">&quot;$2&quot;</span><br> <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Log output to console&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<h2 id="代码片段属性">代码片段属性</h2>
+<ol>
+<li><code>&quot;Print to console&quot;</code> 是代码片段的名字，如果<code>&quot;description&quot;</code>参数未选，它会出现在列表中;</li>
+<li><code>&quot;prefix&quot;</code>表示触发提示的关键词，可以是字符串也可以是字符串数组 (多触发词), 且只需前部分几个即可匹配;</li>
+<li><code>&quot;body&quot;</code>:主体部分，下一部分会简要介绍其语法;</li>
+<li><code>&quot;description&quot;</code>:可选，表示对代码片段的描述．</li>
+</ol>
+<h2 id="代码片段基本语法">代码片段基本语法</h2>
+<h3 id="制表符">制表符</h3>
+<p>VSCode 中代码片段里制表符由 $ 和数字序号组成.$1 表示第一个位置，$2 表示第二个位置，以此类推，$0 表示结束的位置，亦即退出代码片段后光标停留的位置．</p>
+<blockquote>
+<p>注：可以用<code>tab</code>键跳转制表符 (废话，不然怎么叫制表符)</p>
+</blockquote>
+<h3 id="镜像制表位">镜像制表位</h3>
+<p>可以重复使用相同序号的制表符，填充内容的时候默认同步．</p>
+<h3 id="占位符">占位符</h3>
+<p>它们是有默认值的制表符，语法为<code>$&#123;1:default&#125;</code>,可以嵌套使用</p>
+<h3 id="其他基础知识">其他基础知识</h3>
+<ul>
+<li>可以使用<code>\n</code>和<code>\t</code>表示换行和跳格 - 想要打出反斜杠\需要多次转义，确切说是\\\\(4 个)</li>
+</ul>
+<h2 id="参考配置">参考配置</h2>
+<p>下面是笔者的基本配置 (只用到了上面的语法)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br><span class="line">685</span><br><span class="line">686</span><br><span class="line">687</span><br><span class="line">688</span><br><span class="line">689</span><br><span class="line">690</span><br><span class="line">691</span><br><span class="line">692</span><br><span class="line">693</span><br><span class="line">694</span><br><span class="line">695</span><br><span class="line">696</span><br><span class="line">697</span><br><span class="line">698</span><br><span class="line">699</span><br><span class="line">700</span><br><span class="line">701</span><br><span class="line">702</span><br><span class="line">703</span><br><span class="line">704</span><br><span class="line">705</span><br><span class="line">706</span><br><span class="line">707</span><br><span class="line">708</span><br><span class="line">709</span><br><span class="line">710</span><br><span class="line">711</span><br><span class="line">712</span><br><span class="line">713</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>	<span class="hljs-comment">// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and </span><br>	<span class="hljs-comment">// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</span><br>	<span class="hljs-comment">// $1, $2 for tab stops, $0 for the final cursor position, and $&#123;1:label&#125;, $&#123;2:another&#125; for placeholders. Placeholders with the </span><br>	<span class="hljs-comment">// same ids are connected.</span><br>	<span class="hljs-comment">// Example:</span><br>	<span class="hljs-comment">// &quot;Print to console&quot;: &#123;</span><br>	<span class="hljs-comment">//  &quot;prefix&quot;: &quot;log&quot;,</span><br>	<span class="hljs-comment">//  &quot;body&quot;: [</span><br>	<span class="hljs-comment">//      &quot;console.log(&#x27;$1&#x27;);&quot;,</span><br>	<span class="hljs-comment">//      &quot;$2&quot;</span><br>	<span class="hljs-comment">//  ],</span><br>	<span class="hljs-comment">//   description: &quot;Log output to console&quot;</span><br>	<span class="hljs-comment">// &#125;</span><br>	<span class="hljs-comment">//公式环境</span><br>	<span class="hljs-attr">&quot;equation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;eq&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;equation&#125;\n\t$1\n\\\\end&#123;equation&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;align&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ali&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;align&#125;\n\t$1\n\\\\end&#123;align&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;aligned&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;alid&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;aligned&#125;\n\t$1\n\\\\end&#123;aligned&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;cases&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cases&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;cases&#125;\n\t$1\n\\\\end&#123;cases&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;gather&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;gather&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;gather&#125;\n\t$1\n\\\\end&#123;gather&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-comment">//运算符号</span><br>	<span class="hljs-attr">&quot;limit&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;lim&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\lim\\\\limits_&#123;$1&#125; $2 &quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;suplim&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;limsup&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\varlimsup\\\\limits_&#123;$1&#125;^&#123;$2&#125; $3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;inflim&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;liminf&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\varliminf\\\\limits_&#123;$1&#125;^&#123;$2&#125; $3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;sumit&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sum&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\sum\\\\limits_&#123;$1&#125;^&#123;$2&#125; $3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;prodit&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;prod&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\prod\\\\limits_&#123;$1&#125;^&#123;$2&#125; $3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;avint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;avint&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\avint_&#123;$1&#125;^&#123;$2&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;pmatrix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;matrix&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;pmatrix&#125;\n\t$1\n\\\\end&#123;pmatrix&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;bmatrix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@@[&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;bmatrix&#125;\n$1\n\\\\end&#123;bmatrix&#125;$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;det&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;det&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left|\\\\begin&#123;matrix&#125;\n$1\n\\end&#123;matrix&#125;\\\\right|$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;dfrac&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;frac&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\dfrac&#123;$1&#125;&#123;$2&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;tfrac hangnei&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tfrac&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\tfrac&#123;$1&#125;&#123;$2&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;sqrt&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sqrt&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\sqrt&#123;$1&#125;$2&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;verb&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;verb&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\verb|$1|$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;int&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;int&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\int_&#123;$1&#125;^&#123;$2&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;oint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;oint&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\oint_&#123;$1&#125;^&#123;$2&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;iint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;iint&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\iint\\\\limits_&#123;$1&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;iiint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;iiint&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\iiint\\\\limits_$1&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;iiiint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;iiiint&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\iiiint\\\\limits_$1&#125;$3&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;()&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@(&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left($1\\\\right)$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;[]&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@[&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left[$1\\\\right]$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;&#123;&#125;&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@&#123;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left\\\\&#123;$1\\\\right\\\\&#125;$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;||&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@@|&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left|$1\\\\right|$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;||||&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@||&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left\\\\|$1\\\\right\\\\|$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;&lt;&gt;&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@|&lt;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left\\\\langle$1\\\\right\\\\rangle$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;lfloor&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;lfloor&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left\\\\lfloor$1\\\\right\\\\rfloor$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;lceil&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;lceil&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\left\\\\lceil$1\\\\right\\\\rceil$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;&gt;=&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;geq&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\geqslant $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;&lt;=&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;leq&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\leqslant $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;!=&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;neq&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\neq $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;~=&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@~=&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\cong $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;~&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@~&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\sim $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;~~&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@~~&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\approx $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;+-&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@+-&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\pm $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;-+&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@-+&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\mp $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;-=&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@-=&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\equiv $0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;choose&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;choose&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\binom&#123;$1&#125;&#123;$2&#125;$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;infty&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;infty&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\infty$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-comment">//特殊字体</span><br>	<span class="hljs-attr">&quot;cesaro&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cesaro&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot; Ces\\\\grave&#123;a&#125;ro&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;fejer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Fejer&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;Fej\\\\acute&#123;e&#125;r&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;mathrm&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rm&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\mathrm&#123;$1&#125;$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;mathbb&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bb&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\mathbb&#123;$1&#125;$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;mathsrc&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;scr&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\mathscr&#123;$1&#125;$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;mathcal&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cal&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\mathcal&#123;$1&#125;$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-comment">//函数</span><br>	<span class="hljs-attr">&quot;sin&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sin&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\sin$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;cos&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cos&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\cos$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;tan&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tan&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\tan$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;ln&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ln&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\ln$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;log&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;log&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\log$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;lg&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;lg&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\lg$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;max:&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;max&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\max$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;min:&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;min&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\min$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;sinh&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sinh&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\sinh$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;cosh&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cosh&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\cosh$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;tanh&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tanh&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\tanh$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;arcsin&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arcsin&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\arcsin$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;arccos&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arccos&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\arccos$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;arctan&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arctan&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\arctan$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;arcsinh&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arcsinh&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\arcsinh$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;arccosh&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arccosh&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\arccosh$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;arctanh&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arctanh&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\arctanh$1$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-comment">//希腊字母</span><br>	<span class="hljs-attr">&quot;alpha&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;alpha&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\alpha$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;beta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;beta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\beta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;gamma&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;gamma&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\gamma$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;delta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;delta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\delta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;epsilon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;epsilon&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\varepsilon$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;zeta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;zeta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\zeta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;varzeta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;varzeta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\varzeta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;eta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;eta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\eta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;theta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;theta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\theta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;vartheta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vartheta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\vartheta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;iota&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;iota&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\iota$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;kappa&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;kappa&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\kappa$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;lambda&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;lambda&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\lambda$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;mu&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;mu&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\mu$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;nu&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;nu&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\nu$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;xi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;xi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\xi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;omicron&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;omicron&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\omicron$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;pi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\pi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;rho&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;rho&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\rho$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;sigma&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sigma&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\sigma$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;tau&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tau&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\tau$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;upsilon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;upsilon&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\upsilon$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;phi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;phi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\phi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;varphi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;varphi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\varphi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;chi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;chi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\chi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;psi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;psi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\psi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;omega&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;omega&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\omega$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Gamma&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Gamma&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Gamma$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Delta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Delta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Delta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Theta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Theta&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Theta$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Lambda&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Lambda&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Lambda$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Xi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Xi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Xi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Pi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Pi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Pi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Sigma&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Sigma&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Sigma$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Upsilon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Upsilon&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Upsilon$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Phi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Phi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Phi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Psi&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Psi&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Psi$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;Omega&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Omega&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\Omega$0&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-comment">//图片，列表</span><br>	<span class="hljs-attr">&quot;figure&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;figure&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;figure&#125;[H]&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\centering&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\includegraphics[width=0.8\\\\textwidth]&#123;$&#123;1:figure&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\caption&#123;$&#123;2:caption&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\label&#123;fig:$&#123;3:label&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\end&#123;figure&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;subfigure&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;subfigure&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;figure&#125;[H]&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\centering&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\subfigure[Caption]&#123;$1&#125;&#123;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\label&#123;fig:$&#123;3:label&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\includegraphics[width=0.4\\\\textwidth]&#123;$&#123;2:figure&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\subfigure[Caption]&#123;$1&#125;&#123;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\label&#123;fig:$&#123;3:label&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\includegraphics[width=0.4\\\\textwidth]&#123;$&#123;2:figure&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\caption&#123;$&#123;4:caption&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\label&#123;fig:$&#123;5:label&#125;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\end&#123;figure&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;itemize&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;itemize&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;itemize&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\item $0&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\end&#123;itemize&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;enumerate&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;enumerate&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\begin&#123;enumerate&#125;&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\item $0&quot;</span><span class="hljs-punctuation">,</span><br>			<span class="hljs-string">&quot;\\\\end&#123;enumerate&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-comment">//章节</span><br>	<span class="hljs-attr">&quot;chapter&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;chapter&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\chapter&#123;$0&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;section&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;section&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\section&#123;$0&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;subsection&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ssection&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\subsection&#123;$0&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;subsubsection&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;sssection&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\subsubsection&#123;$0&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-attr">&quot;paragraph&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>		<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;paragraph&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>			<span class="hljs-string">&quot;\\\\paragraph&#123;$0&#125;&quot;</span><span class="hljs-punctuation">,</span><br>		<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<h2 id="参考阅读资料">参考阅读资料</h2>
+<p>本文中对于代码片段语法只是简单介绍，<br>
+可以参考</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/chinese/news/definitive-guide-to-snippets-visual-studio-code/">VS Code 代码片段完全入门指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">Snippets in Visual Studio Code</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LaTeX/" class="category-chain-item">LaTeX</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/LaTeX/" class="print-no-link">#LaTeX</a>
+      
+        <a href="/tags/VSCode/" class="print-no-link">#VSCode</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LaTeX 进阶 - 用户代码片段</div>
+      <div>https://will-c137.github.io/p/2efcfc91/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Will</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年12月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/p/5723de38/" title="BibTeX 教程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">BibTeX 教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/p/41b55798/" title="LaTeX 进阶 - 自定义快捷键">
+                        <span class="hidden-mobile">LaTeX 进阶 - 自定义快捷键</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

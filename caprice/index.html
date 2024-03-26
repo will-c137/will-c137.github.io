@@ -1,0 +1,591 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/zima.png">
+  <link rel="icon" href="/img/zima.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Will">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="2023-08-29 终于重建了博客，没想到还是用回了 hexo． 2023-09-02 QQ 居然升了 API，支付宝居然有暗色模式，什么活久见． 2023-09-03 换了键盘，是 keychron k3pro ．矮红轴手感不错，声音也比较小，还是 84 配列，就是需要熟悉一下键位.． 2023-09-04 「因为痛苦太有价值，因为回忆太珍贵，所以我们更要继续往前走．」 2023-09-10">
+<meta property="og:type" content="website">
+<meta property="og:title" content="caprice">
+<meta property="og:url" content="https://will-c137.github.io/caprice/index.html">
+<meta property="og:site_name" content="Will&#39;s Blog">
+<meta property="og:description" content="2023-08-29 终于重建了博客，没想到还是用回了 hexo． 2023-09-02 QQ 居然升了 API，支付宝居然有暗色模式，什么活久见． 2023-09-03 换了键盘，是 keychron k3pro ．矮红轴手感不错，声音也比较小，还是 84 配列，就是需要熟悉一下键位.． 2023-09-04 「因为痛苦太有价值，因为回忆太珍贵，所以我们更要继续往前走．」 2023-09-10">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/de93685a20c1fb999775329eea075577_720.jpg">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20230917125002.png">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/c42b66f69222f7cd5aed9b8a9fb13364_720.jpg">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/03eb3d8346d26d232ebc5d8f8dafa121_720.jpg">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/2ed27c23e72ec54d1fc25fb9a9f60b31.jpeg">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20231216212346.png">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/Screenshot_20240303_175320.png">
+<meta property="article:published_time" content="2023-08-29T15:18:28.000Z">
+<meta property="article:modified_time" content="2024-03-26T09:41:40.617Z">
+<meta property="article:author" content="Will">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/de93685a20c1fb999775329eea075577_720.jpg">
+  
+  
+  
+    <meta name="google-site-verification" content="1ft1JC8JzprTmwMEl4OtX_Aycupu8HLnIwT-k_ruwqA" />
+  
+  <title>caprice - Will&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"will-c137.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Will&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>文章</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-bookmark-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/caprice/" target="_self">
+                <i class="iconfont icon-speakernotes"></i>
+                <span>随想</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="记录一时的想法"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <div class="markdown-body">
+<h2 id="2023-08-29">2023-08-29</h2>
+<p>终于重建了博客，没想到还是用回了 hexo．</p>
+<h2 id="2023-09-02">2023-09-02</h2>
+<p>QQ 居然升了 API，支付宝居然有暗色模式，什么活久见．</p>
+<h2 id="2023-09-03">2023-09-03</h2>
+<p>换了键盘，是 keychron k3pro ．矮红轴手感不错，声音也比较小，还是 84 配列，就是需要熟悉一下键位.．</p>
+<h2 id="2023-09-04">2023-09-04</h2>
+<p>「因为痛苦太有价值，因为回忆太珍贵，所以我们更要继续往前走．」</p>
+<h2 id="2023-09-10">2023-09-10</h2>
+<p><a target="_blank" rel="noopener" href="https://madoka-magica.com/">「圆神，启动！」</a></p>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/de93685a20c1fb999775329eea075577_720.jpg" srcset="/img/loading.gif" lazyload alt="回天新视觉图"></p>
+<h2 id="2023-09-11">2023-09-11</h2>
+<ul>
+<li>重构了 <code>TG-files</code> 项目，居然已经大到需要推荐网页上传了．</li>
+<li>把鸽了很久的 <code>tgbook</code> 完善了，用粗暴的方法避免了之前的问题．</li>
+<li>做利他的事情产生的厌恶感又出现了，是因为自私吗？我决定不去想这个问题了．</li>
+</ul>
+<h2 id="2023-09-16">2023-09-16</h2>
+<p>重新试了一下 GitHub actions 自动部署，发觉在自己的使用环境 (单设备) 下效率并没有提高．毕竟</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;update&quot;</span><br>git push<br></code></pre></td></tr></table></figure>
+<p>和</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo cl<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
+<p>都是同样的 3 步，甚至后者输入量更少．</p>
+<p>事实证明做出改变前还是要多想想，不要人云亦云．</p>
+<h2 id="2023-09-17">2023-09-17</h2>
+<ul>
+<li>今天 Q 软件推出了「史诗级」的更新，不得不水一篇了．(<a href="https://will-c137.github.io/p/c68cc46/">从 APK 说起:Android 安装包格式发展</a>)</li>
+<li>稍微装修了一下 Github 主页，用了一下 <code>github-readme-stats</code> 这个项目，挺好用的。效果如下：<br>
+<img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20230917125002.png" srcset="/img/loading.gif" lazyload alt="Github 主页"></li>
+</ul>
+<h2 id="2023-09-19">2023-09-19</h2>
+<ul>
+<li>MATLAB 居然放下身段自己做了一个 VSCode 插件，用起来还不错．</li>
+</ul>
+<h2 id="2023-09-29">2023-09-29</h2>
+<ul>
+<li>
+<p>中秋节和 wmls 们聚了，Every day is mayday.<br>
+<img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/c42b66f69222f7cd5aed9b8a9fb13364_720.jpg" srcset="/img/loading.gif" lazyload alt="一张糊照"></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://frieren-anime.jp/">葬送的芙莉莲</a>终于开播了，前 4 话的制作规格相当高，配乐和画面都堪称顶级，还补充了原作的许多小细节以及补全了原作画师所不擅长的人物表情和战斗分镜。唯一美中不足的是稀碎的 OP，不过 OP 的画面补足了 OP 配乐的不足，也算是互补了吧．<br>
+<img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/03eb3d8346d26d232ebc5d8f8dafa121_720.jpg" srcset="/img/loading.gif" lazyload alt="一张宣传图"></p>
+</li>
+</ul>
+<h2 id="2023-10-02">2023-10-02</h2>
+<p>昨晚梦见你了，可是只有坐时光机才能见到你．</p>
+<blockquote>
+<p>好后悔，好伤心，想重来，行不行．<br>
+再一次，我就不会走向这样的结局．</p>
+</blockquote>
+<h2 id="2023-10-04">2023-10-04</h2>
+<p>Android14 终于发布了，同时震惊于 Pixel8 系的 7 年系统维护期．<br>
+什么叫做亲儿子啊 (战术后仰).<br>
+<img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/2ed27c23e72ec54d1fc25fb9a9f60b31.jpeg" srcset="/img/loading.gif" lazyload alt="Pixel8 维护时间"></p>
+<h2 id="2023-10-09">2023-10-09</h2>
+<p>多看内容输出，少看观点宣泄．</p>
+<h2 id="2023-10-12">2023-10-12</h2>
+<blockquote>
+<p>「互联网诞生伊始，有一些在道德上向善的理念一一互助，分享，自由…… 它们如星星之火，燃起了一片更美好的未来的天空．目前，这天空已黯淡无光，偶尔闪烁几点磷火，映出接踵摩肩的腐尸们满是恶意的脸．」</p>
+</blockquote>
+<h2 id="2023-10-13">2023-10-13</h2>
+<p>看到了 <a target="_blank" rel="noopener" href="https://techwithmaddy.com/spl-a-faster-and-easier-alternative-to-sql">spl</a> 的介绍，作为 sql 的替代品，有点意思．</p>
+<p>SPL stands for Structured Process Language.</p>
+<p>SPL has several enhancements.</p>
+<p>Some of them are:</p>
+<ul>
+<li>Understanding of grouping and aggregation: with SPL, the grouping operation is split into a two-step autonomous operation.</li>
+<li>High performance: for example, SPL allows you to avoid sorting data, therefore allowing for better performance.</li>
+</ul>
+<h2 id="2023-10-14">2023-10-14</h2>
+<p><a target="_blank" rel="noopener" href="https://frieren-anime.jp/">葬送的芙莉莲</a> ep6 的战斗分镜好强，将原作只有一页的「静态」打斗扩写成了 2 分钟的精彩演出，画面和配乐堪称顶级，日常作画的张数也非常丰富，甚至还有一些原创的镜头，画师们真的太强了．</p>
+<h2 id="2023-10-15">2023-10-15</h2>
+<p>调整了博客内容，增加了<a href="/bangumis/">追番</a>和<a href="/software/">软件</a>页面，放在收藏目录下，用于记录自看剧集和自用软件．</p>
+<p>这下比起个人博客更像知识库了 (😀)，毕竟没什么写文章的动力．</p>
+<h2 id="2023-10-15-2">2023-10-15</h2>
+<p>相容次序矩阵好不知所谓，复习不下去了．😒</p>
+<h2 id="2023-12-15">2023-12-15</h2>
+<p>今天收到了 Github 学生包的续约邮件，不知不觉过了两年了．</p>
+<h2 id="2023-12-16">2023-12-16</h2>
+<p>Alex 居然弄了本比尔之书。<br>
+<img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20231216212346.png" srcset="/img/loading.gif" lazyload alt="啊？"></p>
+<h2 id="2024-1-5">2024-1-5</h2>
+<p>平板屏幕寄了，还好是 LCD 屏幕，换总成也没那么贵．</p>
+<blockquote>
+<p>-380￥</p>
+</blockquote>
+<h2 id="2024-1-13">2024-1-13</h2>
+<p>OpenWrt 居然推出了一款路由器，这下不得不购买了．</p>
+<h2 id="2024-1-16">2024-1-16</h2>
+<p>来点「GB2312」笑话．</p>
+<blockquote>
+<p>贰鍪晃众丧皖田咏 宙兴晃聱己皖田咏</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/676267027">破解链接</a></p>
+<h2 id="2024-1-16-2">2024-1-16</h2>
+<p>今天配置了 Rime 输入法，学习了标点符号的规范使用方法．但之前不规范的文章已经懒得改动了．</p>
+<h2 id="2024-2-27">2024-2-27</h2>
+<p>将使用的系统改为了 openSUSE 单系统．</p>
+<h2 id="2024-2-28">2024-2-28</h2>
+<ul>
+<li>博客改为由 GitHub actions 自动部署，方便迁移和无须本地配置环境．</li>
+<li>发现 Fcitx5 可以选择 KDE 皮肤，观感非常好，避免在 Linux 下无法配置皮肤导致的输入法奇丑无比．</li>
+</ul>
+<h2 id="2024-3-1">2024-3-1</h2>
+<p>更新了 2024 年第一篇文章．</p>
+<h2 id="2024-3-3">2024-3-3</h2>
+<ul>
+<li>修改了所有文章的排版，使其规范．另外推荐一个插件 AutoCorrect，能够优化文本的排版，比如自动在所有的中文字和半形的英文、数字、符号之间插入空白．</li>
+</ul>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/Screenshot_20240303_175320.png" srcset="/img/loading.gif" lazyload alt="AutoCorrect"></p>
+<blockquote>
+<p>汉学家称这个空白字元为「盘古之白」，因为它劈开了全形字和半形字之间的混沌．另有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫．毕竟爱情跟书写都需要适时地留白．</p>
+</blockquote>
+<ul>
+<li>移除 RSS 支持，因为拉取的结果不竟如人意．</li>
+</ul>
+<h2 id="2024-3-5">2024-3-5</h2>
+<p>换了路由器固件，发现 ImmortalWrt 18.06 比后续的版本兼容性好多了．</p>
+<h2 id="2024-03-14">2024-03-14</h2>
+<p>解决 Linux 下阅读 PDF 文件问题的神！</p>
+<blockquote>
+<p>一篇 11 年前的文章：<a target="_blank" rel="noopener" href="http://linux-wiki.cn/wiki/PDF%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA">PDF 中文显示</a></p>
+</blockquote>
+<h2 id="2024-03-16">2024-03-16</h2>
+<p>被 KDE6 吓晕，暂时不敢更新了．</p>
+<h2 id="2024-03-17">2024-03-17</h2>
+<p>复习了一下 Snapper 的使用方法．</p>
+<ul>
+<li>重启到 Grub，进入一个能用的只读快照</li>
+<li>打开终端，<code>snapper ls</code>列出快照</li>
+<li><code>snapper rollback **</code>回滚到编号「**」的快照</li>
+<li>重启系统，大蜥蜴又活蹦乱跳了</li>
+</ul>
+
+
+  
+
+</article>
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

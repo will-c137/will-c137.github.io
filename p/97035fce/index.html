@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/zima.png">
+  <link rel="icon" href="/img/zima.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Will">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="在 Linux 上安装 texlive">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 上的 texlive 安装与配置">
+<meta property="og:url" content="https://will-c137.github.io/p/97035fce/index.html">
+<meta property="og:site_name" content="Will&#39;s Blog">
+<meta property="og:description" content="在 Linux 上安装 texlive">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/Screenshot_20240301_220430.png">
+<meta property="article:published_time" content="2024-03-14T15:09:26.000Z">
+<meta property="article:modified_time" content="2024-03-26T09:41:40.617Z">
+<meta property="article:author" content="Will">
+<meta property="article:tag" content="LaTeX">
+<meta property="article:tag" content="openSUSE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/Screenshot_20240301_220430.png">
+  
+  
+  
+    <meta name="google-site-verification" content="1ft1JC8JzprTmwMEl4OtX_Aycupu8HLnIwT-k_ruwqA" />
+  
+  <title>Linux 上的 texlive 安装与配置 - Will&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"will-c137.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Will&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>文章</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-bookmark-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/caprice/" target="_self">
+                <i class="iconfont icon-speakernotes"></i>
+                <span>随想</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Linux 上的 texlive 安装与配置"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Will
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-14 15:09" pubdate>
+          2024年3月14日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="LaTeX"
+        id="heading-5766dea037e9097ac6869424b65fe7b6" role="tab" data-toggle="collapse" href="#collapse-5766dea037e9097ac6869424b65fe7b6"
+        aria-expanded="true"
+      >
+        LaTeX
+        <span class="list-group-count">(9)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-5766dea037e9097ac6869424b65fe7b6"
+           role="tabpanel" aria-labelledby="heading-5766dea037e9097ac6869424b65fe7b6">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/p/5723de38/" title="BibTeX 教程"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">BibTeX 教程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/607d85b8/" title="LaTeX 中的命令行操作"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">LaTeX 中的命令行操作</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/2efcfc91/" title="LaTeX 进阶 - 用户代码片段"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">LaTeX 进阶 - 用户代码片段</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/41b55798/" title="LaTeX 进阶 - 自定义快捷键"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">LaTeX 进阶 - 自定义快捷键</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/97035fce/" title="Linux 上的 texlive 安装与配置"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Linux 上的 texlive 安装与配置</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/c3b4499/" title="Minted 宏包教程"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Minted 宏包教程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/e3598bbe/" title="使用 VSCode 作为 LaTeX 前端"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">使用 VSCode 作为 LaTeX 前端</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/7b66ea8d/" title="在 LaTeX 中使用算法伪代码"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">在 LaTeX 中使用算法伪代码</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/d2b0e588/" title="如何找到所有的 LaTeX 符号"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">如何找到所有的 LaTeX 符号</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Linux 上的 texlive 安装与配置</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>最近把系统更换成了 openSUSE 单系统．之前安装的一些软件都得重新安装，其中最麻烦的就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TeX</mtext><mrow></mrow></mrow><annotation encoding="application/x-tex">\TeX{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span><span class="mord"></span></span></span></span> Live．事实上 openSUSE 的主源中是有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TeX</mtext><mrow></mrow></mrow><annotation encoding="application/x-tex">\TeX{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span><span class="mord"></span></span></span></span> Live 的，但是宏包不全．故使用镜像文件进行安装．</p>
+<blockquote>
+<p>本文无意比较两种安装方式之优劣．</p>
+</blockquote>
+<h2 id="1-镜像的下载与挂载">1.镜像的下载与挂载</h2>
+<p>首先需要选择一个镜像站下载 <code>.iso</code> 文件，比如</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://mirror.nju.edu.cn/CTAN/systems/texlive/Images/">https://mirror.nju.edu.cn/CTAN/systems/texlive/Images/</a></p>
+</blockquote>
+<p>然后进行下载和文件校验．</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># GnuPG 校验签名</span><br>gpg --verify texlive2024.iso.sha512.asc<br><span class="hljs-comment"># MD5 校验</span><br><span class="hljs-built_in">md5sum</span> texlive2024.iso<br><span class="hljs-comment"># SHA-512 校验</span><br><span class="hljs-built_in">sha512sum</span> texlive2024.iso<br><span class="hljs-comment"># 与官方提供的 Hash 对比</span><br><span class="hljs-built_in">cat</span> texlive2024.iso.md5 texlive2024.iso.sha512<br></code></pre></td></tr></table></figure>
+<p>完成之后，在下载的文件所在地打开终端，挂载 <code>.iso</code> 文件．</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">su <span class="hljs-comment"># 使用管理员账号安装</span><br><span class="hljs-built_in">mkdir</span> /mnt/texlive <span class="hljs-comment"># 建立挂载点</span><br>mount -o loop texlive.iso /mnt/texlive <span class="hljs-comment"># 挂载镜像，注意你的文件名</span><br></code></pre></td></tr></table></figure>
+<h2 id="2-安装">2.安装</h2>
+<blockquote>
+<p>因为要安装到<code>/usr/local</code>下，所以需要管理员身份</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">su <span class="hljs-comment"># 使用管理员</span><br><span class="hljs-built_in">cd</span> /mnt/texlive/<br>./install-tl<br></code></pre></td></tr></table></figure>
+<p>此处不使用 <code>-gui</code> 参数，若使用需要安装 <code>perl-tk</code> 组件 ．</p>
+<p>事实上此步也可以精简安装，参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133984428">这篇文章</a>.</p>
+<p>安装完整后卸载镜像并删除目录．</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">su <span class="hljs-comment"># 使用管理员</span><br>umount /mnt/texlive <span class="hljs-comment"># 卸载</span><br><span class="hljs-built_in">rm</span> -r /mnt/texlive/ <span class="hljs-comment"># 删除创建的目录</span><br></code></pre></td></tr></table></figure>
+<h2 id="3-解决依赖问题">3.解决依赖问题</h2>
+<p><code>texlive-dummy</code> 可以用来避免非源安装带来的依赖问题．也可以自动配置环境变量．(需要安装在默认位置)</p>
+<p>进入下载界面，下载 <a target="_blank" rel="noopener" href="https://mirror.nju.edu.cn/CTAN/support/texlive/texlive-dummy/"><code>texlive-dummy</code></a>,注意选择<code>openSUSE.zip</code>这个文件，解压，并在文件夹打开终端，安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo zypper <span class="hljs-keyword">in</span> --allow-unsigned-rpm texlive-dummy-xxxx.noarch.rpm<br><span class="hljs-comment"># 此处替换成实际文件名字</span><br></code></pre></td></tr></table></figure>
+<p>执行以下命令或者重启生效．</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">su<br><span class="hljs-built_in">source</span> /etc/profile<br></code></pre></td></tr></table></figure>
+<p>验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tex -v<br></code></pre></td></tr></table></figure>
+<p>安装成功应有以下输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">TeX 3.141592653 (TeX Live 2024)<br>kpathsea version 6.4.0<br>Copyright 2024 D.E. Knuth.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the TeX copyright and<br>the Lesser GNU General Public License.<br>For more information about these matters, see the file<br>named COPYING and the TeX <span class="hljs-built_in">source</span>.<br>Primary author of TeX: D.E. Knuth.<br></code></pre></td></tr></table></figure>
+<h2 id="4-配置环境变量">4.配置环境变量</h2>
+<p>众所周知，刚安装完不配置环境变量是不能用的．如果用不到依赖 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TeX</mtext><mrow></mrow></mrow><annotation encoding="application/x-tex">\TeX{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span><span class="mord"></span></span></span></span> Live 的软件，也可以不安装 <code>dummy</code> 包．手动配置环境变量，以 bash 为例子，修改  <code>~/.bashrc</code>  文件．</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim ~/.bashrc <span class="hljs-comment"># 打开文件</span><br></code></pre></td></tr></table></figure>
+<p>在最后添加这些行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Add TeX Live to the PATH, MANPATH, INFOPATH</span><br><span class="hljs-built_in">export</span> PATH=/usr/local/texlive/2024/bin/x86_64-linux:<span class="hljs-variable">$PATH</span><br><span class="hljs-built_in">export</span> MANPATH=/usr/local/texlive/2024/texmf-dist/doc/man:<span class="hljs-variable">$MANPATH</span><br><span class="hljs-built_in">export</span> INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info:<span class="hljs-variable">$INFOPATH</span><br></code></pre></td></tr></table></figure>
+<p>重启或者执行以下命令生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure>
+<h2 id="5-解决-tlmgr-在管理员下找不到的问题">5. 解决 <code>tlmgr</code> 在管理员下找不到的问题</h2>
+<p>打开 <code>/etc/sudoers</code>，将 <code>Defaults env_reset </code> 改为 <code>Defaults !env_reset</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">su <span class="hljs-comment"># 管理员</span><br>visudo <span class="hljs-comment">#使用 visudo 命令编辑 /etc/sudoers 文件</span><br></code></pre></td></tr></table></figure>
+<p>修改<code>.bashrc</code> 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim ~/.bashrc<br></code></pre></td></tr></table></figure>
+<p>加入以下这行</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">alias</span> sudo=<span class="hljs-string">&#x27;sudo env PATH=<span class="hljs-variable">$PATH</span>&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>同样重启生效或执行下面语句</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">su<br><span class="hljs-built_in">source</span> /etc/profile<br></code></pre></td></tr></table></figure>
+<p>然后就可以使用 <code>tlmgr</code>了．</p>
+<h2 id="6-关于字体">6.关于字体</h2>
+<p>参考 tug 上的英文文档</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.tug.org/texlive/doc/texlive-en/texlive-en.pdf">https://www.tug.org/texlive/doc/texlive-en/texlive-en.pdf</a></p>
+</blockquote>
+<p><img src="https://willblogs-1314994209.cos.ap-nanjing.myqcloud.com/imgs/20240315160705.png" srcset="/img/loading.gif" lazyload alt="关于中文输出"></p>
+<p>简言之，如果使用的是 Xe<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TeX</mtext><mrow></mrow></mrow><annotation encoding="application/x-tex">\TeX{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span><span class="mord"></span></span></span></span>, 需要将字体配置文件移动到系统目录．</p>
+<blockquote>
+<p>以下 <code>TEXMFSYSVA</code> 为安装目录，默认为 <code>/usr/local/texlive</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">cp</span> TEXMFSYSVAR/fonts/conf/texlive-fontconfig.conf etc/fonts/conf.d/09-texlive.conf <br><span class="hljs-built_in">cd</span> /etc/fonts/conf.d/<br>sudo fc-cache -fsv<br></code></pre></td></tr></table></figure>
+<p>如果只在当前用户下使用，执行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">cp</span> TEXMFSYSVAR/fonts/conf/texlive-fontconfig.conf ~/.fonts.confs.d/09-texlive.conf<br><span class="hljs-built_in">cd</span> /etc/fonts/conf.d/<br>sudo fc-cache -fsv<br></code></pre></td></tr></table></figure>
+<p>实测该方法可能会污染系统的字体（部分字体有多个名称）．</p>
+<p>如果使用的是 Lua<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TeX</mtext><mrow></mrow></mrow><annotation encoding="application/x-tex">\TeX{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span><span class="mord"></span></span></span></span>，则<strong>无事可做</strong>．（推荐，谁不想偷懒）</p>
+<p>事实上 Lua<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TeX</mtext><mrow></mrow></mrow><annotation encoding="application/x-tex">\TeX{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8988em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4678em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span><span class="mord"></span></span></span></span> 更现代，支持的字符是多于前者的，如 emoji，只是编译速度慢一些，然而 Linux 下编译速度本就比 MS Windows 快不少，且这几年这两者的编译速度接近了起来，至于此番话是夸谁还是损谁，留作自行判断．</p>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://forum.suse.org.cn/t/opensuse-texlive2015-kile-texstudio-tex/4109/3">[教程]OpenSUSE 安装配置 TeXLive2015、前端软件 Kile、TeXstudio 及 TeX 更新软件的使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/524165545">Linux 下自定义安装 Texlive2023</a></li>
+<li><a target="_blank" rel="noopener" href="https://yangfangs.github.io/2016/03/31/set-path-linux/">Linux 下设置环境变量</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.askk.cc/2020/05/17/texlive-postinstallation/index.html">Linux 系统安装 TeXLive 之后的事</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/eslzzyl/p/17358405.html">TeX Live 的安装和使用教程</a></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LaTeX/" class="category-chain-item">LaTeX</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/LaTeX/" class="print-no-link">#LaTeX</a>
+      
+        <a href="/tags/openSUSE/" class="print-no-link">#openSUSE</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Linux 上的 texlive 安装与配置</div>
+      <div>https://will-c137.github.io/p/97035fce/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Will</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/p/e13c1d69/" title="openSUSE-KDE 自用配置">
+                        <span class="hidden-mobile">openSUSE-KDE 自用配置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
